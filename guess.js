@@ -9,17 +9,17 @@ function ask(questionText) {
 
 choice()
 async function choice() {
-    let start = await ask('You guess or I Guess? ')
-    if (start === 'I guess') {
+    let start = await ask('human guess or computer guess? ')
+    if (start === 'human guess') {
        return startComp()
     }
-    else if (start === 'you guess') {
+    else if (start === 'computer guess') {
         return startHuman()
     }
 }
 
 function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
+    return Math.floor((Math.random()/2) * (max - min + 1) + min)
 }
 
 startComp();
